@@ -62,11 +62,12 @@ class AddClassViewController: UIViewController {
                 let CompleteTime = Int(AnswerArray[2])
                 let ECTime = Int(AnswerArray[3])
                 let UID = Auth.auth().currentUser!.uid
+                print(AnswerArray)
                 ref.child(UID).child("schedule").child("Assignments").child(AnswerArray[4]).child("ClassName").setValue(AnswerArray[0])
                 ref.child(UID).child("schedule").child("Assignments").child(AnswerArray[4]).child("Date").setValue(AnswerArray[1])
                 ref.child(UID).child("schedule").child("Assignments").child(AnswerArray[4]).child("CompleteTime").setValue(CompleteTime)
                 ref.child(UID).child("schedule").child("Assignments").child(AnswerArray[4]).child("ECTime").setValue(ECTime)
-                print(AnswerArray)
+                
                 self.dismiss(animated: true, completion: nil)
             }
         }
